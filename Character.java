@@ -1,5 +1,10 @@
+import CharClass;
+
 public class Character {
-    int Hp = 0;
-    double DmgMeele = 0.0;
-    
+    private String nome;
+    private int xp;
+    private int nivel;
+    private int vidaAtual;
+    private int manaAtual;
+
 }
