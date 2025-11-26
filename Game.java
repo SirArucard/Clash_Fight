@@ -94,8 +94,17 @@ public class Game {
                 System.out.println("You attacked!");
                 inimigo.recebeDano(10);
             } else {
-                System.out.println("You use an ability");
-                inimigo.recebeDano(20);
+                System.out.println("Which ability you choose?");
+                System.out.println("1. " + hero.getModeloClasse().getAbility1().pegaNome());
+                System.out.println("2. " + hero.getModeloClasse().getAbility2().pegaNome());
+                int escolhaAb = ler.nextInt();
+
+                Ability habilidadeUsada = null;
+                if (escolhaAb == 1) habilidadeUsada = hero.getModeloClasse().getAbility1();
+                else habilidadeUsada = hero.getModeloClasse().getAbility2();
+
+                System.out.println("You used " + habilidadeUsada.pegaNome() + "!");
+                habilidadeUsada.usar(hero, inimigo);
             }
 
             if (inimigo.pegaVidaAtual() <= 0) {
