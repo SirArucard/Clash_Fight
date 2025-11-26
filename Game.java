@@ -1,5 +1,5 @@
 import java.util.Random;
-import monster.Monster;
+import monsters.Monster;
 import java.util.Scanner;
 import abilities.*;
 import monsters.Goblin;

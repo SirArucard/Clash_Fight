@@ -1,5 +1,4 @@
 import abilities.Ability;
-import CharClass;
 
 public class Character {
     private String nome;
