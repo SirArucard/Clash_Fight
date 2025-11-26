@@ -1,6 +1,6 @@
 package abilities;
+import entities.Character;
 import monsters.Monster;
-import Character;
 
 
 public abstract class Ability {

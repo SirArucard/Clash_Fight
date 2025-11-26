@@ -1,4 +1,6 @@
-import abilities.Ability;
+package entities;
+import abilities.Ability; 
+import monsters.Monster;
 
 public class Character {
     private String nome;
@@ -31,10 +33,12 @@ public class Character {
 
     public void receberCura(int cura) {
         this.vidaAtual += cura;
+        
         if (this.vidaAtual > this.modeloClasse.getVidaBase()) {
             this.vidaAtual = this.modeloClasse.getVidaBase();
-            System.out.println("You recovery" + cura + "of your health!");
         }
+        
+        System.out.println("You recovered " + cura + " HP!");
     }
 
     public String getNome() {
@@ -44,5 +48,4 @@ public class Character {
     public CharClass getModeloClasse() {
         return this.modeloClasse;
     }
-
 }

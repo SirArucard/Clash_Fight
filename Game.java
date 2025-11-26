@@ -2,6 +2,8 @@ import java.util.Random;
 import monsters.Monster;
 import java.util.Scanner;
 import abilities.*;
+import entities.CharClass;
+import entities.Character;
 import monsters.Goblin;
 
 public class Game {
@@ -80,7 +82,7 @@ public class Game {
 
             // --- STATUS ---
             System.out.println("\n" + hero.getNome() + " (HP: " + hero.getVidaAtual() + ") vs " +
-                    inimigo.pegaNome() + " (HP: " + inimigo.pegaVida() + ")");
+                    inimigo.pegaNome() + " (HP: " + inimigo.pegaVidaAtual() + "/" + inimigo.pegaVida() + ")");
 
             // --- TURNO DO JOGADOR ---
             System.out.println("Choose your action:");
@@ -90,33 +92,42 @@ public class Game {
             System.out.print("> ");
             int acao = ler.nextInt();
 
+            // Lógica direta sem menu repetido
             if (acao == 1) {
                 System.out.println("You attacked!");
                 inimigo.recebeDano(10);
+
+            } else if (acao == 2) {
+                Ability ab = hero.getModeloClasse().getAbility1();
+                System.out.println("You used " + ab.pegaNome() + "!");
+                ab.usar(hero, inimigo);
+
+            } else if (acao == 3) {
+                Ability ab = hero.getModeloClasse().getAbility2();
+                System.out.println("You used " + ab.pegaNome() + "!");
+                ab.usar(hero, inimigo);
+
             } else {
-                System.out.println("Which ability you choose?");
-                System.out.println("1. " + hero.getModeloClasse().getAbility1().pegaNome());
-                System.out.println("2. " + hero.getModeloClasse().getAbility2().pegaNome());
-                int escolhaAb = ler.nextInt();
-
-                Ability habilidadeUsada = null;
-                if (escolhaAb == 1) habilidadeUsada = hero.getModeloClasse().getAbility1();
-                else habilidadeUsada = hero.getModeloClasse().getAbility2();
-
-                System.out.println("You used " + habilidadeUsada.pegaNome() + "!");
-                habilidadeUsada.usar(hero, inimigo);
+                System.out.println("Invalid action! You lose your turn.");
             }
 
+            // Checa vitória antes do ataque do monstro
             if (inimigo.pegaVidaAtual() <= 0) {
                 System.out.println("\nVICTORY! The " + inimigo.pegaNome() + " was defeated!");
                 break;
             }
 
-            System.out.println("\nO " + inimigo.pegaNome() + " attacks!");
-            inimigo.ataque();
-            hero.receberDano(inimigo.PodAtk());
-            System.out.println("He deal " + inimigo.PodAtk() + " damage.");
-
+            // --- TURNO DO INIMIGO ---
+            if (!inimigo.estaAtordoado()) {
+                System.out.println("\nO " + inimigo.pegaNome() + " attacks!");
+                inimigo.ataque();
+                hero.receberDano(inimigo.PodAtk());
+                System.out.println("He dealt " + inimigo.PodAtk() + " damage.");
+            } else {
+                System.out.println("\nThe " + inimigo.pegaNome() + " is stunned and cannot move!");
+                inimigo.limparStun();
+            }
+            
             if (hero.getVidaAtual() <= 0) {
                 System.out.println("\nYou died... Game Over.");
                 break;

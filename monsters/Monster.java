@@ -6,6 +6,7 @@ public abstract class Monster {
     private int vidaAtual;
     private int xpRec;
     private int PodAtk;
+    private boolean atordoado = false;
 
     public abstract void ataque();
 
@@ -38,7 +39,17 @@ public abstract class Monster {
     }
 
     public int pegaVidaAtual() {
-    return this.vidaAtual;
+        return this.vidaAtual;
+    }
+
+    public void aplicarStun(int turnos) {
+        this.atordoado = true;
+    }
+    public boolean estaAtordoado() {
+        return this.atordoado;
+    }
+    public void limparStun() {
+        this.atordoado = false;
     }
 
 }

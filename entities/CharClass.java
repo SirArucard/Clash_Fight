@@ -1,3 +1,4 @@
+package entities;
 import abilities.Ability;
 
 public class CharClass {

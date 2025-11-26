@@ -1,6 +1,6 @@
 package abilities;
+import entities.Character;
 import monsters.Monster;
-import Character;
 
 
 public class StunAb extends Ability {
@@ -25,4 +25,6 @@ public class StunAb extends Ability {
         } else {
             System.out.println("Stun failed!"); 
 
+}
+    }
 }

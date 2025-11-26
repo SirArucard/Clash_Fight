@@ -10,6 +10,6 @@ public class Goblin extends Monster {
 
     @Override
     public void ataque() {
-        System.out.println(this.pegaNome() + " ri histericamente e te arranha!");
+        System.out.println(this.pegaNome() + "laughs menacingly and swings its club!");
     }
 }
