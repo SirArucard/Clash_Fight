@@ -1,4 +1,6 @@
 package abilities;
+import monsters.Monster;
+import Character;
 
 public class HealingAb extends Ability {
     private int cura;
@@ -8,6 +10,14 @@ public class HealingAb extends Ability {
         super(nomeAb, manaCusto);
         this.cura = cura;
         this.numCuras = numCuras;
+    }
+    @Override
+    public void usar(Object usuario, Monster alvo) {
+        Character charUsuario = (Character) usuario;
+        for(int i = 0; i < this.numCuras; i++) {
+            System.out.println("Heal! You recover " + this.cura + " health!");
+            charUsuario.receberCura(this.cura);
+        }
     }
 
 }

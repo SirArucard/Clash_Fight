@@ -29,6 +29,14 @@ public class Character {
         }
     }
 
+    public void receberCura(int cura) {
+        this.vidaAtual += cura;
+        if (this.vidaAtual > this.modeloClasse.getVidaBase()) {
+            this.vidaAtual = this.modeloClasse.getVidaBase();
+            System.out.println("You recovery" + cura + "of your health!");
+        }
+    }
+
     public String getNome() {
         return this.nome;
     }
