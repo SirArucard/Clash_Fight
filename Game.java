@@ -28,7 +28,6 @@ public class Game {
         System.out.println("3 - Rogue");
         System.out.print("You choose: ");
         int escolha = ler.nextInt();
-        System.out.print("\n Good Luck, and have some fun!");
 
         switch (escolha) {
             case 1:
@@ -77,17 +76,17 @@ public class Game {
         System.out.println("\n--- BATTLE START ---");
         System.out.println("A Wild " + inimigo.pegaNome() + " Appears");
 
-        while (this.heroi.getVidaAtual() > 0 && this.inimigo.pegaVidaAtual() > 0) {
+        while (this.hero.getVidaAtual() > 0 && this.inimigo.pegaVidaAtual() > 0) {
 
             // --- STATUS ---
-            System.out.println("\n" + heroi.getNome() + " (HP: " + heroi.getVidaAtual() + ") vs " +
+            System.out.println("\n" + hero.getNome() + " (HP: " + hero.getVidaAtual() + ") vs " +
                     inimigo.pegaNome() + " (HP: " + inimigo.pegaVida() + ")");
 
             // --- TURNO DO JOGADOR ---
             System.out.println("Choose your action:");
             System.out.println("1. Base Attack");
-            System.out.println("2. " + heroi.getModeloClasse().getAbility1().pegaNome());
-            System.out.println("3. " + heroi.getModeloClasse().getAbility2().pegaNome());
+            System.out.println("2. " + hero.getModeloClasse().getAbility1().pegaNome());
+            System.out.println("3. " + hero.getModeloClasse().getAbility2().pegaNome());
             System.out.print("> ");
             int acao = ler.nextInt();
 
@@ -106,10 +105,10 @@ public class Game {
 
             System.out.println("\nO " + inimigo.pegaNome() + " attacks!");
             inimigo.ataque();
-            heroi.receberDano(inimigo.PodAtk());
+            hero.receberDano(inimigo.PodAtk());
             System.out.println("He deal " + inimigo.PodAtk() + " damage.");
 
-            if (heroi.getVidaAtual() <= 0) {
+            if (hero.getVidaAtual() <= 0) {
                 System.out.println("\nYou died... Game Over.");
                 break;
             }
