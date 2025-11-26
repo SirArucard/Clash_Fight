@@ -50,10 +50,12 @@ Execute the compiled main class:
 java Main
 ```
 
-🗺️ Roadmap (Future of the Project)
+## 🗺️ Roadmap (Future of the Project)
+
 This project is constantly evolving. Below are the improvements and features planned for upcoming versions:
 
-🛠️ Phase 1: Refactoring & Fixes (Current)
+## 🛠️ Phase 1: Refactoring & Fixes (Current)
+
 [ ] Fix Stun Mechanic: Implement turn counting for the stun effect logic.
 
 [ ] Package Organization:
@@ -64,21 +66,24 @@ Create an items package to structure the future inventory system.
 
 [ ] Initial Balancing: Adjust damage and health values to make combat fairer.
 
-📈 Phase 2: Progression & Content
+##📈 Phase 2: Progression & Content
+
 [ ] Level Up System: Implement XP gain and stat increases upon leveling up.
 
 [ ] New Monsters: Add a variety of enemies with different behaviors (AI).
 
 [ ] Item Usage: Implement the use of potions and consumables during battle.
 
-💰 Phase 3: Economy & Campaign
+##💰 Phase 3: Economy & Campaign
+
 [ ] Shop System: Implement random encounters with merchants to buy items.
 
 [ ] Item Drops: Make monsters drop gold or items upon defeat.
 
 [ ] Campaign Loop: Create a progressive sequence of battles.
 
-💾 Phase 4: Advanced Features
+##💾 Phase 4: Advanced Features
+
 [ ] Save System: Implement a save system via "Encrypted Codes" (retro game style).
 
 [ ] Improved Interface: Polish console messages for a better user experience.
