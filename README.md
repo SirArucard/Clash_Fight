@@ -36,7 +36,6 @@ This project requires a **Java Development Kit (JDK)** installed on your system.
 git clone [https://github.com/viniciuspratadev/Clash_Fight](https://github.com/viniciuspratadev/Clash_Fight)
 cd Clash_Fight
 ```
-
 2. Compile
 ```
 javac Main.java
