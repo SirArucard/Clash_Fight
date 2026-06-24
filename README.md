@@ -33,15 +33,13 @@ This project requires a **Java Development Kit (JDK)** installed on your system.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/repo-name.git
-cd repo-name
+git clone [https://github.com/viniciuspratadev/Clash_Fight](https://github.com/viniciuspratadev/Clash_Fight)
+cd Clash_Fight
 ```
-2. Compile
 
-Compile the main Java files
-(Replace Main.java with the name of your actual main class):
+2. Compile
 ```
-javac *.java
+javac Main.java
 ```
 3. Run the Game
 
