@@ -38,6 +38,11 @@ public abstract class Monster {
         this.vidaAtual -= danoRecebido;
     }
 
+    public void recebeDano(int danoRecebido, double multiplicadorCritico) {
+        int danoFinal = (int) (danoRecebido * multiplicadorCritico);
+        this.vidaAtual -= danoFinal;
+        System.out.println("Critical Damage! Deal " + danoFinal + " damage.");
+
     public int pegaVidaAtual() {
         return this.vidaAtual;
     }
